@@ -59,6 +59,7 @@ import os
 dataset = "./data" # the root folder
 trainpath = os.path.join(dataset,"train") # train set
 valpath = os.path.join(dataset,"val") # validation set
+print('validation data path should be:', valpath)
 def pad(raw):
     ex = np.zeros((22050,))
     ex[:len(raw)] = raw
@@ -83,11 +84,11 @@ nploader = np.load
 # In[7]:
 
 
-traindata = DatasetFolder(root=trainpath, loader=nploader, transform=tsfm, extensions=['npy'])
+#traindata = DatasetFolder(root=trainpath, loader=nploader, transform=tsfm, extensions=['npy'])
 valdata = DatasetFolder(root=valpath, loader=nploader, transform=tsfm, extensions=['npy'])
 
 # Create a loader
-trainloader = DataLoader(traindata,batch_size=batch_size,shuffle=True, pin_memory=True, num_workers=6)
+#trainloader = DataLoader(traindata,batch_size=batch_size,shuffle=True, pin_memory=True, num_workers=6)
 valloader = DataLoader(valdata,batch_size=batch_size,shuffle=True,  pin_memory=True, num_workers=6)
 
 
@@ -100,6 +101,7 @@ valloader = DataLoader(valdata,batch_size=batch_size,shuffle=True,  pin_memory=T
 
 # In[9]:
 
+traindata = valdata
 
 idx_to_class = {val: key for key, val in traindata.class_to_idx.items()} # build an inverse mapping for later use
 #print(idx_to_class)
