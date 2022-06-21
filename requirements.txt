@@ -57,7 +57,7 @@ msgpack-numpy==0.4.3.2
 networkx==2.1
 numba==0.38.0
 numexpr==2.4.3
-numpy==1.14.3
+numpy==1.22.0
 oauthlib==1.0.3
 onboard==1.2.0
 opencv-contrib-python==3.4.3.18
