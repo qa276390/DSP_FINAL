@@ -48,7 +48,7 @@ librosa==0.6.0
 llvmlite==0.23.0
 louis==2.6.4
 lxml==3.5.0
-Mako==1.0.3
+Mako==1.2.2
 Markdown==2.6.11
 MarkupSafe==0.23
 matplotlib==3.0.3
